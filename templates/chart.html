@@ -3,5 +3,8 @@
 {% block title%} Django-Dash All {% endblock %}
 
 {% block content %}
+<h1> Repos by Size </h1>
+
+<embed type="image/svg+xml" src="{{ rendered_chart_svg_as_datauri|safe }}" />
 
 {% endblock content %}

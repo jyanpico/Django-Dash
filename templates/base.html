@@ -17,7 +17,6 @@
 
     <style>
 
-        /* Let's make our logo look like You-Know-Who's */
         .navbar-brand {
             font-family: Roboto, Helvetica;
             font-weight: 800;
@@ -68,12 +67,12 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto">
                     <li class="nav-item">
-                        <!-- update href-->
-                        <a class="nav-link" href="">List of Repos</a>
+                        <!-- update href to heroku link-->
+                        <a class="nav-link" href="all/">List of Repos</a>
                     </li>
                     <li class="nav-item">
-                        <!-- update href-->
-                        <a class="nav-link" href="">Chart</a>
+                        <!-- update href to heroku link-->
+                        <a class="nav-link" href="chart/">Chart</a>
                     </li>
                 </ul>
             </div>
@@ -81,19 +80,30 @@
 
     </div>
 
-    <div class="container">
+    <div class="container pt-2">
 
-      {% if messages %}
-          {% for message in messages %}
-              <div class="alert {% if message.tags %}alert-{{ message.tags }}{% endif %}">{{ message }}</div>
-          {% endfor %}
-      {% endif %}
+    {% block content %}
+    {% endblock content %}
 
-      {% block content %}
-        <p>Use this document as a way to quick start any new project.</p>
-      {% endblock content %}
 
-    </div> 
+    <!-- 
+
+        <h1>Welcome to Django Dash</h1>
+    
+        <p>This is my Homework Submission for Kickstart Coding!</p>
+    
+        <div class="p-5 m-5 shadow">
+            <p>Learn more about our repos:</p>
+    
+            <a class="btn btn-lg btn-secondary" href="all/">List of all our repos</a>
+            <a class="btn btn-lg btn-success" href="chart/">Repos graphed by size</a>
+            <a class="btn btn-lg btn-primary" href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">Defintely not a Rick Roll!</a>
+        </div>
+
+        </div>
+
+
+    </div>  -->
 
 
     {% block javascript %}

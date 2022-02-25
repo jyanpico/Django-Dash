@@ -4,4 +4,25 @@
 
 {% block content %}
 
+<table class ='table mt-5'>
+    <thead> 
+    <tr>
+        <th scope="col">Name</th> 
+        <th scope="col">Size</th>
+        <th scope="col">Language</th>
+        <th scope="col">Button</th>
+    </tr> 
+    </thead>
+        <tbody>
+        {% for repo_dict in github_repos %}
+            <tr>
+                <td scope="row">{{ repo_dict.name }}</td>
+                <td scope="row">{{ repo_dict.size }} bytes</td>
+                <td scope="row">{{ repo_dict.language }}</td>
+                <td><a class="btn btn-light btn-sm" href="{{ repo_dict.url }}" target="_blank">View</a></td>
+            </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
 {% endblock content %}
