@@ -7,7 +7,7 @@ def index(request):
     context = {
 
     }
-    return render(request, 'base.html', context)
+    return render(request, 'index.html', context)
 
 def chart(request):
     response = requests.get('https://api.github.com/users/kickstartcoding/repos')
