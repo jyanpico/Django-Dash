@@ -5,7 +5,6 @@ from django.shortcuts import render
 
 def index(request):
     context = {
-
     }
     return render(request, 'index.html', context)
 
@@ -18,11 +17,11 @@ def chart(request):
         value = repo_dict["size"]
         label = repo_dict["name"]
         chart.add(label, value)
-        chart_svg_as_datauri = chart.render_data_uri()
-        context = {
-            'github_repos': repos,
-            "rendered_chart_svg_as_datauri": chart_svg_as_datauri,
-        }
+    chart_svg_as_datauri = chart.render_data_uri()
+    context = {
+        'github_repos': repos,
+        "rendered_chart_svg_as_datauri": chart_svg_as_datauri,
+    }
     return render(request, 'chart.html', context)
 
 
